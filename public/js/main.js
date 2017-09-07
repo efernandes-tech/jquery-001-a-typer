@@ -4,6 +4,8 @@ var numPalavras = frase.split(" ").length;
 var tamanhoFrase = $("#tamanho-frase");
 tamanhoFrase.text(numPalavras);
 
+var tempoInicial = $("#tempo-digitacao").text();
+
 var campo = $(".campo-digitacao");
 campo.on("input", function() {
     var conteudo = campo.val();
@@ -27,4 +29,14 @@ campo.one("focus", function() {
             clearInterval(cronometroID);
         }
     }, 1000);
+});
+
+$("#botao-reiniciar").click(function(){
+    campo.attr("disabled", false);
+    //inicializando os campos
+    campo.val("");
+    $("#contador-palavras").text("0");
+    $("#contador-caracteres").text("0");
+
+    $("#tempo-digitacao").text(tempoInicial);
 });
