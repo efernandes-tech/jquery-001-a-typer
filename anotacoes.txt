@@ -7,3 +7,5 @@ Mine game usando jQuery. (projeto prático)
     - Pq na china o win xp domina.
 - A função ".one()"" escuta o evento apenas uma única vez.
 - A função ".on()" fica escutando o evento por tempo ilimitado.
+- Iniciar o servidor com o NodeJS.
+    npm start
