@@ -8,11 +8,16 @@ app.use(express.static('./../public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.use(function(req, res, next) {
-// 	res.header("Access-Control-Allow-Origin", "*");
-// 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-// 	next();
-// });
+// (CUIDADO)
+// As linhas comentadas servem para habilitar o CORS para todas as origens,
+// dessa forma, requisicoes vindas de outro servidor seram a aceitas.
+/*
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+*/
 
 consign({cwd: 'app'})
 	.include('api')
